@@ -1,0 +1,16 @@
+[
+    {
+        "modid": "dtc",
+        "name": "DTCommands",
+        "version": "0.1",
+        "requiredMods": [
+            "spongeapi@5.2.0-SNAPSHOT"
+        ]
+    },
+    {
+        "modid": "dtcommands",
+        "name": "DTCommands",
+        "version": "0.1",
+        "description": "DT Commands"
+    }
+]
