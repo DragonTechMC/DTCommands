@@ -1,8 +1,10 @@
 package com.dragontechmc.dtcommands;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable;
+
+@ConfigSerializable
 public class CommandDefinition {
 	public List<String> aliases;
 	
