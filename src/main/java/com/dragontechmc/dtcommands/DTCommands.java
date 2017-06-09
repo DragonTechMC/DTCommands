@@ -13,11 +13,7 @@ import ninja.leaping.configurate.objectmapping.ObjectMapper;
 import java.net.URL;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Optional;
-import java.util.function.Function;
-
 import org.slf4j.Logger;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.text.Text;
@@ -105,6 +101,22 @@ public class DTCommands {
 			ObjectMapper<CommandConfiguration> mapper = ObjectMapper.forClass(CommandConfiguration.class);
 			CommandConfiguration config = new CommandConfiguration();
 			mapper.bind(config).populate(source);
+
+			if(config.commands.size() == 0) {
+				// If there are no commands in the config, generate a test one
+				CommandDefinition example = new CommandDefinition();
+				example.aliases = new ArrayList<String>();
+				example.aliases.add("example");
+				example.aliases.add("example2");
+				example.commandName = "Example Command";
+				example.description = "An example command for DTC";
+				example.linkText = "This is the link text";
+				example.linkUrl = "http://www.dragontechmc.com";
+				example.permission = "permission.name";
+				config.commands.add(example);	
+				mapper.bind(config).serialize(source);
+				loader.save(source);
+			}
 
 			// I've create a nice "CommandDefinition" object which just takes the configuration
 			// data and packages it up neatly - just makes it easier to work with later
