@@ -5,8 +5,8 @@ A simple hyperlink-enabled dynamic command plugin
 It uses a configuration file to define simple commands that will popup URLs
 
 ```
-commands: {
-	name: {
+commands: [
+	{
 		name: "<command_name>",
 		description: "<desc>",
 		permission: "<permission_string>",
@@ -14,7 +14,7 @@ commands: {
 		link_text: "click here!",
 		link_url: "<http://somelink.com>"
 	},
-	name2: {
+	{
 		name: "<command_name2>",
 		description: "<desc2>",
 		permission: "<permission_string2>",
@@ -23,5 +23,5 @@ commands: {
 		link_url: "<http://someotherlink.com>"
 	} 
 	// ... and so on
-}
+]
 ```
