@@ -5,23 +5,29 @@ A simple hyperlink-enabled dynamic command plugin
 It uses a configuration file to define simple commands that will popup URLs
 
 ```
-commands: [
-	{
-		name: "<command_name>",
-		description: "<desc>",
-		permission: "<permission_string>",
-		aliases: ["<alias1>", "<alias2>"],
-		link_text: "click here!",
-		link_url: "<http://somelink.com>"
-	},
-	{
-		name: "<command_name2>",
-		description: "<desc2>",
-		permission: "<permission_string2>",
-		aliases: ["<alias1>", "<alias2>"],
-		link_text: "click here now you newb!",
-		link_url: "<http://someotherlink.com>"
-	} 
-	// ... and so on
+commands=[
+    {
+        aliases=[
+            website,
+            site,
+            dragontech
+        ]
+        commandName=Website
+        description="Website command"
+        linkText="Click here to go to the website"
+        linkUrl="http://www.dragontechmc.com"
+        permission="dtc.new"
+    },
+    {
+        aliases=[
+            discord
+        ]
+        commandName=Discord
+        description="Discord command"
+        linkText="Click here to join the Discord"
+        linkUrl="https://discord.gg/Q6mzRPU"
+        permission="dtc.new"
+    }
 ]
+
 ```
